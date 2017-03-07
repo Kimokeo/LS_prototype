@@ -1,0 +1,73 @@
+
+
+
+<button (click)="goBack()">Back</button>
+    <div class="card">
+    
+      <div class="container">
+        <div *ngIf="job">
+            <h2>{{job.company}} order details</h2>
+          <div class="row">
+            <div class="col-sm-3">Work Address</div>
+            <div class="col-sm-6">
+              {{ job.workAddress }}.
+              <br>{{job.city}}, {{job.state}} {{job.zip}}
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-3">Preferences</div>
+            <div class="col-sm-6  pull-left">None</div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-3">Requester Info</div>
+            <div class="col-sm-6 pull-left">
+              {{job.firstName}} {{job.lastName}}
+              <br>{{job.email}}
+              <br>{{job.company}}
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-3">Rooms Total</div>
+            <div class="col-sm-6  pull-left">
+              <li *ngFor=" let singleRoom of job.singleRooms; let i = index ">
+                Single: 
+                  <br> - Number of rooms: {{singleRoom.number}}
+                  <br> - Price: ${{singleRoom.price}}
+                  <br> - Number of days: {{singleRoom.days}} 
+                  <br> - Starting Date: {{singleRoom.startingDate}}
+              </li>
+              <li *ngFor=" let doubleRoom of job.doubleRooms; let i = index ">
+                Double:
+                  <br> - Number of rooms: {{doubleRoom.number}}
+                  <br> - Price: ${{doubleRoom.price}}
+                  <br> - Number of days: {{doubleRoom.days}} 
+                  <br> - Starting Date: {{doubleRoom.startingDate}}
+              </li>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-3">Coding</div>
+            <div class="col-sm-6  pull-left">
+              Billable To: {{job.billableTo}}
+              <br>
+              Project Type: {{job.projectType}}
+              <br>
+              Project Number: {{job.projectNumber}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">Urgency</div>
+            <div class="col-sm-6  pull-left">{{job.urgency}} hours</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">Notes</div>
+            <div class="col-sm-6  pull-left">{{job.notes}} </div>
+          </div>
+        </div>
+      </div>
+    </div>
+

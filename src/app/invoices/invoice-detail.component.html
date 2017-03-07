@@ -1,0 +1,36 @@
+
+
+
+<button (click)="goBack()">Back</button>
+    <div class="card">
+    
+      <div class="container">
+        <div *ngIf="invoice">
+            <h2>{{invoice.company}} order details</h2>
+          <div class="row">
+            <div class="col-sm-3">Work Address</div>
+            <div class="col-sm-6">
+              {{ invoice.workAddress }}.
+              <br>{{invoice.city}}, {{invoice.state}} {{invoice.zip}}
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-3">Preferences</div>
+            <div class="col-sm-6  pull-left">None</div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-3">Requester Info</div>
+            <div class="col-sm-6 pull-left">
+              {{invoice.firstName}} {{invoice.lastName}}
+              <br>{{invoice.email}}
+              <br>{{invoice.company}}
+            </div>
+          </div>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+
